@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Microbio Info Hub</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <!-- Header -->
+    <div class="header">
+      <h1>Microbio Info Hub</h1>
+      <p>Your place to get a quick glance on microbes & techniques</p>
+    </div>
+
+    <!-- Search microbes -->
+    <div class="search-section">
+      <input id="microbeSearch" type="text" placeholder="Search microbes...">
+      <button onclick="searchMicrobes()">Search</button>
+    </div>
+    <div id="microbeResults" class="results"></div>
+
+    <!-- Search techniques -->
+    <div class="search-section">
+      <input id="techSearch" type="text" placeholder="Search techniques...">
+      <button class="secondary" onclick="searchTechniques()">View Techniques</button>
+    </div>
+    <div id="techResults" class="results"></div>
+  </div>
+
+  <!-- Link JS -->
+  <script src="script.js"></script>
+</body>
+</html>
