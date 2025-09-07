@@ -1,476 +1,569 @@
-// =======================
-// Microbes List (20 items)
-// =======================
 const microbes = [
   {
     name: "Escherichia coli",
-    synonyms: ["E. coli", "ecoli", "E.coli", "Escherichia"],
-    info: [
-      "Gram-negative, rod-shaped bacterium",
-      "Normal gut flora, but some strains pathogenic",
-      "Indicator of fecal contamination",
-      "Model organism in research"
-    ]
-  },
-  {
-    name: "Human Immunodeficiency Virus",
-    synonyms: ["HIV", "hiv", "AIDS virus"],
-    info: [
-      "Retrovirus that infects CD4+ T cells",
-      "Causes Acquired Immunodeficiency Syndrome (AIDS)",
-      "Weakens the immune system",
-      "Transmitted through blood, sexual contact, and from mother to child"
-    ]
-  },
-  {
-    name: "Mycobacterium tuberculosis",
-    synonyms: ["TB bacteria", "Tuberculosis bacterium"],
-    info: [
-      "Acid-fast bacillus",
-      "Causes tuberculosis",
-      "Airborne transmission",
-      "Can persist in latent form"
-    ]
+    synonyms: ["E. coli", "ecoli", "Ecoli"],
+    morphological: "Gram-negative, rod-shaped bacterium; facultative anaerobe; motile with peritrichous flagella.",
+    culture: "On MacConkey agar forms pink lactose-fermenting colonies; metallic green sheen on EMB agar.",
+    virulence: "Fimbriae for adhesion, exotoxins (Shiga-like toxin), endotoxin (LPS).",
+    transmission: "Fecal–oral route, contaminated food and water, person-to-person.",
+    treatment: "Hydration and electrolyte replacement; antibiotics like ciprofloxacin or TMP-SMX (not for toxin-producing strains); prevention via hygiene and proper food handling."
   },
   {
     name: "Staphylococcus aureus",
-    synonyms: ["S. aureus", "Staph"],
-    info: [
-      "Gram-positive coccus",
-      "Causes skin infections, pneumonia, and sepsis",
-      "MRSA strains are antibiotic resistant",
-      "Produces toxins"
-    ]
+    synonyms: ["S. aureus", "staph", "Staph"],
+    morphological: "Gram-positive cocci in clusters; facultative anaerobe; non-motile.",
+    culture: "Golden-yellow colonies on nutrient agar; beta-hemolysis on blood agar; mannitol fermentation on MSA.",
+    virulence: "Protein A, coagulase, hemolysins, enterotoxins, toxic shock syndrome toxin (TSST-1).",
+    transmission: "Direct contact, contaminated surfaces, airborne droplets, food contamination.",
+    treatment: "Beta-lactamase–resistant antibiotics (e.g., nafcillin); for MRSA, vancomycin or linezolid; prevention by hand hygiene and aseptic techniques."
   },
-  {
-    name: "Streptococcus pyogenes",
-    synonyms: ["Group A Streptococcus", "Strep A"],
-    info: [
-      "Gram-positive coccus",
-      "Causes strep throat and scarlet fever",
-      "Can lead to rheumatic fever",
-      "Beta-hemolytic"
-    ]
-  },
-  {
-    name: "Salmonella enterica",
-    synonyms: ["Salmonella", "S. enterica"],
-    info: [
-      "Gram-negative rod",
-      "Causes food poisoning and typhoid fever",
-      "Spread through contaminated food and water",
-      "Facultative intracellular pathogen"
-    ]
-  },
-  {
-    name: "Clostridium botulinum",
-    synonyms: ["C. botulinum", "Botulism bacterium"],
-    info: [
-      "Gram-positive, spore-forming rod",
-      "Produces botulinum toxin",
-      "Causes botulism",
-      "Anaerobic"
-    ]
-  },
-  {
-    name: "Bacillus anthracis",
-    synonyms: ["Anthrax bacterium", "B. anthracis"],
-    info: [
-      "Gram-positive, spore-forming rod",
-      "Causes anthrax",
-      "Can infect skin, lungs, and gut",
-      "Used as a bioterrorism agent"
-    ]
+{
+    name: "Salmonella typhi",
+    synonyms: ["S. typhi", "Typhoid bacillus"],
+    morphological: "Gram-negative rod, facultative anaerobe, motile with peritrichous flagella.",
+    culture: "Produces black colonies on SS agar due to H2S production; non-lactose fermenter on MacConkey.",
+    virulence: "Vi antigen (capsular), endotoxin, ability to survive in macrophages.",
+    transmission: "Fecal–oral route through contaminated water, food, or carriers.",
+    treatment: "Ciprofloxacin, azithromycin, or ceftriaxone; prevention by vaccination, safe water, and sanitation."
   },
   {
     name: "Vibrio cholerae",
-    synonyms: ["Cholera bacterium", "V. cholerae"],
-    info: [
-      "Gram-negative, comma-shaped bacterium",
-      "Causes cholera",
-      "Produces cholera toxin",
-      "Spread by contaminated water"
-    ]
+    synonyms: ["V. cholerae"],
+    morphological: "Gram-negative curved rod with polar flagellum; facultative anaerobe.",
+    culture: "Grows on TCBS agar producing yellow colonies (sucrose fermenter).",
+    virulence: "Cholera toxin (CTX) causing profuse watery diarrhea; toxin-coregulated pili.",
+    transmission: "Contaminated water and food; fecal–oral route.",
+    treatment: "Aggressive oral or IV rehydration; doxycycline or azithromycin in severe cases; prevention via clean water and sanitation."
   },
-  {
-    name: "Helicobacter pylori",
-    synonyms: ["H. pylori", "Stomach ulcer bacterium"],
-    info: [
-      "Gram-negative spiral bacterium",
-      "Colonizes stomach lining",
-      "Associated with gastritis and ulcers",
-      "Risk factor for stomach cancer"
-    ]
+{
+    name: "Mycobacterium tuberculosis",
+    synonyms: ["M. tuberculosis", "Koch’s bacillus", "tb", "TB"],
+    morphological: "Acid-fast slender rod, non-motile, obligate aerobe, slow growing.",
+    culture: "Lowenstein-Jensen medium shows rough, buff-colored colonies after 2–6 weeks.",
+    virulence: "Mycolic acids in cell wall, cord factor, ability to survive inside macrophages.",
+    transmission: "Airborne droplets from coughing, sneezing, close contact.",
+    treatment: "First-line regimen: isoniazid, rifampicin, pyrazinamide, ethambutol (6–9 months); prevention via BCG vaccination, early diagnosis, infection control."
   },
-  {
-    name: "Plasmodium falciparum",
-    synonyms: ["Malaria parasite", "P. falciparum"],
-    info: [
-      "Protozoan parasite",
-      "Causes severe malaria",
-      "Transmitted by Anopheles mosquitoes",
-      "Infects red blood cells"
-    ]
-  },
-  {
-    name: "Candida albicans",
-    synonyms: ["C. albicans", "Yeast infection fungus"],
-    info: [
-      "Opportunistic pathogenic yeast",
-      "Causes oral and genital thrush",
-      "Can cause systemic infections in immunocompromised",
-      "Part of normal flora"
-    ]
-  },
-  {
-    name: "Influenza virus",
-    synonyms: ["Flu virus", "Influenza"],
-    info: [
-      "RNA virus",
-      "Causes seasonal flu",
-      "Mutates rapidly (antigenic drift and shift)",
-      "Transmitted via respiratory droplets"
-    ]
-  },
-  {
-    name: "SARS-CoV-2",
-    synonyms: ["COVID-19 virus", "Coronavirus"],
-    info: [
-      "Novel coronavirus",
-      "Causes COVID-19 pandemic",
-      "Primarily respiratory illness",
-      "Transmitted by droplets and aerosols"
-    ]
-  },
-  {
-    name: "Treponema pallidum",
-    synonyms: ["Syphilis bacterium", "T. pallidum"],
-    info: [
-      "Spirochete bacterium",
-      "Causes syphilis",
-      "Transmitted sexually",
-      "Cannot be cultured in vitro easily"
-    ]
-  },
-  {
-    name: "Neisseria gonorrhoeae",
-    synonyms: ["Gonorrhea bacterium", "N. gonorrhoeae"],
-    info: [
-      "Gram-negative diplococcus",
-      "Causes gonorrhea",
-      "Sexually transmitted",
-      "Some strains resistant to antibiotics"
-    ]
-  },
-  {
-    name: "Human Papillomavirus",
-    synonyms: ["HPV", "Wart virus"],
-    info: [
-      "DNA virus",
-      "Causes warts and cervical cancer",
-      "Many different serotypes",
-      "Preventable with vaccine"
-    ]
-  },
-  {
-    name: "Rabies virus",
-    synonyms: ["Lyssavirus", "Rabies"],
-    info: [
-      "RNA virus",
-      "Causes rabies disease",
-      "Transmitted via animal bites",
-      "Affects nervous system"
-    ]
-  },
-  {
-    name: "Hepatitis B virus",
-    synonyms: ["HBV", "Hepatitis B"],
-    info: [
-      "DNA virus",
-      "Causes hepatitis and liver cancer",
-      "Transmitted through blood and body fluids",
-      "Vaccine-preventable"
-    ]
-  },
-  {
-    name: "Giardia lamblia",
-    synonyms: ["Giardia", "G. lamblia"],
-    info: [
-      "Protozoan parasite",
-      "Causes giardiasis (diarrheal illness)",
-      "Spread through contaminated water",
-      "Flagellated protozoan"
-    ]
-  }
+{
+  name: "Proteus mirabilis",
+  synonyms: ["proteus", "p. mirabilis"],
+  morphological: "Gram-negative rod, highly motile with swarming on agar.",
+  culture: "Non-lactose fermenter; urease-positive.",
+  virulence: "Urease (stone formation), endotoxin.",
+  transmission: "Urinary tract infections, often nosocomial.",
+  treatment: "TMP-SMX, third-gen cephalosporins."
+},
+{
+  name: "Salmonella enterica",
+  synonyms: ["salmonella", "s. enterica"],
+  morphological: "Gram-negative motile rod; non-lactose fermenter; H₂S producer.",
+  culture: "Black colonies on Hektoen enteric agar.",
+  virulence: "Endotoxin, type III secretion.",
+  transmission: "Contaminated food/water, poultry.",
+  treatment: "Fluoroquinolones, third-gen cephalosporins."
+},
+{
+  name: "Shigella dysenteriae",
+  synonyms: ["shigella", "s. dysenteriae"],
+  morphological: "Gram-negative rod; non-motile; non-lactose fermenter.",
+  culture: "Colorless or greenish colonies on selective agar.",
+  virulence: "Shiga toxin (inhibits protein synthesis), LPS endotoxin.",
+  transmission: "Fecal–oral via contaminated food/water.",
+  treatment: "Ciprofloxacin, azithromycin."
+},
+{
+  name: "Helicobacter pylori",
+  synonyms: ["h. pylori", "helicobacter"],
+  morphological: "Gram-negative curved rod; motile; microaerophilic.",
+  culture: "Urease positive; grows on selective media (e.g. Campy agar).",
+  virulence: "Urease, cagA, vacA cytotoxins.",
+  transmission: "Oral–oral or fecal–oral routes.",
+  treatment: "PPI + clarithromycin + amoxicillin/metronidazole (triple therapy)."
+},
+{
+  name: "Neisseria gonorrhoeae",
+  synonyms: ["gonococcus", "n. gonorrhoeae"],
+  morphological: "Gram-negative diplococcus; intracellular in neutrophils.",
+  culture: "Thayer-Martin chocolate agar.",
+  virulence: "Pili (antigenic variation), IgA protease.",
+  transmission: "Sexual contact; perinatal.",
+  treatment: "Ceftriaxone + azithromycin."
+},
+{
+  name: "Neisseria meningitidis",
+  synonyms: ["meningococcus", "n. meningitidis"],
+  morphological: "Gram-negative diplococcus; encapsulated.",
+  culture: "Chocolate or Thayer-Martin agar; grows in CO₂.",
+  virulence: "Capsule, endotoxin (LPS), IgA protease.",
+  transmission: "Respiratory droplets.",
+  treatment: "Ceftriaxone; rifampicin prophylaxis for contacts."
+},
+{
+  name: "Klebsiella pneumoniae",
+  synonyms: ["klebsiella", "k. pneumoniae"],
+  morphological: "Gram-negative rod; large polysaccharide capsule (mucoid colonies).",
+  culture: "Lactose fermenter (pink colonies) on MacConkey agar.",
+  virulence: "Capsule prevents phagocytosis; endotoxin.",
+  transmission: "Aspiration, hospital-acquired infections.",
+  treatment: "Carbapenems (if resistant, use colistin)."
+},
+{
+  name: "Pseudomonas aeruginosa",
+  synonyms: ["pseudomonas", "p. aeruginosa"],
+  morphological: "Gram-negative rod; motile with polar flagella.",
+  culture: "Green pigment (pyocyanin), fruity odor.",
+  virulence: "Exotoxin A, biofilm formation.",
+  transmission: "Contaminated water, hospital equipment.",
+  treatment: "Piperacillin-tazobactam, ceftazidime; resistant strains need colistin."
+},
+{
+  name: "Bacillus anthracis",
+  synonyms: ["anthrax bacillus", "b. anthracis"],
+  morphological: "Gram-positive rod; spore-forming; non-motile; capsule of poly-D-glutamate.",
+  culture: "Ground-glass colonies, non-hemolytic on blood agar.",
+  virulence: "Anthrax toxin (protective antigen, edema factor, lethal factor).",
+  transmission: "Spores from soil, animal products.",
+  treatment: "Ciprofloxacin or doxycycline; vaccine available."
+},
+{
+  name: "Bacillus cereus",
+  synonyms: ["b. cereus"],
+  morphological: "Gram-positive rod; spore-forming; motile.",
+  culture: "Hemolytic colonies on blood agar.",
+  virulence: "Enterotoxins (emetic and diarrheal forms).",
+  transmission: "Contaminated rice, food poisoning.",
+  treatment: "Supportive care; vancomycin for systemic infections."
+},
+{
+  name: "Clostridium perfringens",
+  synonyms: ["c. perfringens"],
+  morphological: "Gram-positive rod; spore-forming anaerobe.",
+  culture: "Double-zone hemolysis on blood agar.",
+  virulence: "Alpha toxin (lecithinase), enterotoxin.",
+  transmission: "Contaminated food; traumatic wounds.",
+  treatment: "Penicillin + clindamycin; surgical debridement."
+},
+{
+  name: "Listeria monocytogenes",
+  synonyms: ["listeria", "l. monocytogenes"],
+  morphological: "Gram-positive coccobacillus; tumbling motility.",
+  culture: "Beta-hemolytic on blood agar.",
+  virulence: "Listeriolysin O; intracellular survival.",
+  transmission: "Contaminated dairy, cold foods; vertical transmission in pregnancy.",
+  treatment: "Ampicillin + gentamicin."
+},
+{
+  name: "Haemophilus influenzae",
+  synonyms: ["h. influenzae", "hib"],
+  morphological: "Gram-negative coccobacillus; requires factors V (NAD⁺) and X (hemin).",
+  culture: "Chocolate agar with factor V and X.",
+  virulence: "Polysaccharide capsule (type b most virulent).",
+  transmission: "Respiratory droplets.",
+  treatment: "Ceftriaxone; rifampicin prophylaxis."
+},
+{
+  name: "Corynebacterium diphtheriae",
+  synonyms: ["c. diphtheriae", "diphtheria bacillus"],
+  morphological: "Gram-positive club-shaped rods in palisades; metachromatic granules.",
+  culture: "Loeffler’s medium, tellurite agar (black colonies).",
+  virulence: "Diphtheria toxin (inhibits EF-2 → protein synthesis block).",
+  transmission: "Respiratory droplets.",
+  treatment: "Antitoxin + erythromycin/penicillin; DPT vaccine."
+},
+{
+  name: "Yersinia pestis",
+  synonyms: ["yersinia", "plague bacillus"],
+  morphological: "Gram-negative coccobacillus; bipolar staining (safety pin).",
+  culture: "Grows on blood agar, slower growth.",
+  virulence: "Yersinia outer proteins (Yops), capsule (F1 antigen).",
+  transmission: "Flea bite (rat reservoir); pneumonic spread human-to-human.",
+  treatment: "Streptomycin, gentamicin; doxycycline for prophylaxis."
+}
 ];
 // Techniques database
 const techniques = [
   { 
     name: ["Gram staining","Gram stain"], 
-    steps: [
-      "Differentiates Gram-positive (purple) and Gram-negative (pink) bacteria",
-      "Primary stain: Crystal violet → Mordant: Iodine → Decolorizer: Alcohol → Counterstain: Safranin",
-      "Important for bacterial classification and antibiotic selection"
-    ]
+    principle: "Differentiates bacteria based on cell wall structure into Gram-positive and Gram-negative.",
+    materials: "Crystal violet, Iodine, Alcohol, Safranin, Microscope.",
+    procedure: "Apply crystal violet → Add iodine → Decolorize with alcohol → Counterstain with safranin.",
+    applications: "Used for initial bacterial classification and guiding antibiotic therapy.",
+    interpretation: "Gram-positive = Purple, Gram-negative = Pink."
   },
   { 
     name: ["Acid-fast staining","Ziehl-Neelsen","AFB stain"], 
-    steps: [
-      "Used to detect Mycobacterium (e.g., TB bacillus)",
-      "Carbol fuchsin (primary stain), acid-alcohol (decolorizer), methylene blue (counterstain)",
-      "Acid-fast bacteria retain red color, others turn blue"
-    ]
+    principle: "Detects acid-fast organisms with mycolic acid in their cell wall.",
+    materials: "Carbol fuchsin, Acid-alcohol, Methylene blue, Microscope.",
+    procedure: "Stain with carbol fuchsin + heat → Decolorize with acid-alcohol → Counterstain with methylene blue.",
+    applications: "Used for *Mycobacterium tuberculosis* and *Nocardia* detection.",
+    interpretation: "Acid-fast = Red, Non–acid-fast = Blue."
   },
   { 
     name: ["Endospore staining","Schaeffer-Fulton method"], 
-    steps: [
-      "Visualizes bacterial endospores (e.g., Bacillus, Clostridium)",
-      "Primary stain: Malachite green → Heat penetration → Counterstain: Safranin",
-      "Spores = green, Vegetative cells = red"
-    ]
+    principle: "Visualizes bacterial endospores resistant to harsh conditions.",
+    materials: "Malachite green, Safranin, Heat source, Microscope.",
+    procedure: "Apply malachite green with heat → Wash → Counterstain with safranin.",
+    applications: "Detection of spore-formers like *Bacillus* and *Clostridium*.",
+    interpretation: "Spores = Green, Vegetative cells = Red."
   },
   { 
     name: ["Capsule staining","Negative staining"], 
-    steps: [
-      "Detects bacterial capsules (e.g., Klebsiella, Cryptococcus)",
-      "Background stained with India ink or nigrosin; capsule remains clear",
-      "Helps identify virulence factors"
-    ]
+    principle: "Detects the presence of a capsule that enhances virulence.",
+    materials: "India ink / Nigrosin, Microscope slide, Stain.",
+    procedure: "Mix sample with ink → Spread on slide → Observe without heat-fixing.",
+    applications: "Identification of capsule producers like *Klebsiella pneumoniae* and *Cryptococcus*.",
+    interpretation: "Capsule = Clear halo around cell, Background = Dark."
   },
   { 
     name: ["Flagella staining"], 
-    steps: [
-      "Used to visualize bacterial flagella",
-      "Mordant thickens flagella, dye makes them visible under light microscope",
-      "Determines motility type (monotrichous, peritrichous, etc.)"
-    ]
-  },
-  { 
-    name: ["Simple staining"], 
-    steps: [
-      "Single dye (e.g., methylene blue, safranin, crystal violet)",
-      "Reveals cell size, shape, and arrangement",
-      "Quick and basic bacterial visualization"
-    ]
-  },
-  { 
-    name: ["Differential staining"], 
-    steps: [
-      "Uses more than one dye to distinguish organisms",
-      "Examples: Gram stain, Acid-fast stain",
-      "Provides better resolution than simple stains"
-    ]
-  },
-  { 
-    name: ["Streak plate method","Streaking"], 
-    steps: [
-      "Isolates pure colonies on solid agar",
-      "Loop streaked across 4 quadrants → gradual dilution of cells",
-      "Used in clinical and research microbiology"
-    ]
-  },
-  { 
-    name: ["Pour plate method"], 
-    steps: [
-      "Diluted sample mixed with molten agar → poured into plate",
-      "Colonies develop inside agar and on surface",
-      "Helps estimate viable bacterial count"
-    ]
-  },
-  { 
-    name: ["Spread plate method"], 
-    steps: [
-      "Diluted sample spread evenly on agar surface with glass rod",
-      "Colonies grow only on surface",
-      "Used for counting and isolating aerobes"
-    ]
-  },
-  { 
-    name: ["Serial dilution"], 
-    steps: [
-      "Stepwise dilution of culture in sterile water/broth",
-      "Helps in colony-forming unit (CFU) calculation",
-      "Common in food, water, and medical microbiology"
-    ]
-  },
-  { 
-    name: ["Microscopy","Light microscopy","Electron microscopy"], 
-    steps: [
-      "Light microscopy → bright-field, dark-field, phase-contrast",
-      "Electron microscopy → scanning (SEM) and transmission (TEM)",
-      "Fluorescence microscopy → uses fluorochromes for pathogen detection"
-    ]
-  },
-  { 
-    name: ["Cell culture","Tissue culture"], 
-    steps: [
-      "Artificial growth of animal/plant cells under sterile conditions",
-      "Used for viral growth, vaccine production, and cancer research",
-      "Requires aseptic technique and growth medium"
-    ]
+    principle: "Demonstrates bacterial flagella for motility type determination.",
+    materials: "Flagella stain (mordant + dye), Microscope.",
+    procedure: "Apply mordant to thicken flagella → Stain → Observe under microscope.",
+    applications: "Differentiates motile species (e.g., *Proteus*, *Salmonella*).",
+    interpretation: "Flagella become visible as fine projections."
   },
   { 
     name: ["PCR","Polymerase Chain Reaction"], 
-    steps: [
-      "Amplifies DNA sequences using primers, nucleotides, and Taq polymerase",
-      "Steps: Denaturation → Annealing → Extension",
-      "Diagnostic tool for infectious diseases, genetics, forensics"
-    ]
+    principle: "Amplifies specific DNA sequences using repeated cycles.",
+    materials: "Template DNA, Primers, Taq polymerase, dNTPs, Thermal cycler.",
+    procedure: "Denaturation → Primer annealing → Extension (repeated 25–35 cycles).",
+    applications: "Diagnosis of infections, genetic studies, forensics.",
+    interpretation: "DNA band visible in gel electrophoresis indicates positive amplification."
   },
   { 
     name: ["Gel electrophoresis"], 
-    steps: [
-      "Separates DNA, RNA, or proteins based on size/charge",
-      "Smaller fragments move faster through agarose/gel matrix",
-      "Commonly visualized with UV + ethidium bromide"
-    ]
-  },
-  { 
-    name: ["Western blotting"], 
-    steps: [
-      "Detects specific proteins from a sample",
-      "Steps: Gel electrophoresis → Transfer to membrane → Antibody binding",
-      "Used in HIV confirmation and protein research"
-    ]
+    principle: "Separates nucleic acids or proteins based on size and charge.",
+    materials: "Agarose/Polyacrylamide gel, Buffer, DNA ladder, Power supply.",
+    procedure: "Load samples into wells → Run electric current → Visualize bands under UV.",
+    applications: "DNA fingerprinting, PCR product analysis, protein studies.",
+    interpretation: "Smaller fragments migrate faster; compare with DNA ladder."
   },
   { 
     name: ["ELISA","Enzyme-linked immunosorbent assay"], 
-    steps: [
-      "Antibody-antigen interaction detected with enzyme-substrate reaction",
-      "Produces visible color change",
-      "Used in diagnostics (HIV, hepatitis, COVID-19)"
-    ]
+    principle: "Antigen–antibody interaction detected via enzyme-substrate reaction.",
+    materials: "Antigen/antibody coated plates, Enzyme conjugate, Substrate, Reader.",
+    procedure: "Add sample → Add enzyme-linked antibody → Wash → Add substrate → Detect color change.",
+    applications: "Diagnosis of infections (HIV, hepatitis, COVID-19), immunology research.",
+    interpretation: "Color intensity is proportional to antigen/antibody presence."
   },
   { 
-    name: ["Flow cytometry"], 
-    steps: [
-      "Measures physical and chemical characteristics of cells",
-      "Laser-based detection → size, granularity, fluorescence",
-      "Used in immunology, cancer, and cell sorting"
-    ]
-  },
-  { 
-    name: ["Spectrophotometry"], 
-    steps: [
-      "Measures cell growth via optical density (OD600)",
-      "Higher absorbance = higher bacterial growth",
-      "Non-invasive, quick method for culture monitoring"
-    ]
+    name: ["Streak plate method","Streaking"], 
+    principle: "Isolates individual colonies from a mixed culture.",
+    materials: "Sterile inoculating loop, Agar plates, Bunsen burner.",
+    procedure: "Streak sample across 4 quadrants on agar plate for dilution.",
+    applications: "Obtaining pure cultures in clinical and research labs.",
+    interpretation: "Isolated single colonies appear in later quadrants."
   },
   { 
     name: ["Blood agar culture","Hemolysis test"], 
-    steps: [
-      "Detects hemolytic activity of bacteria (α, β, γ hemolysis)",
-      "Streptococcus pyogenes = β-hemolysis",
-      "Useful in clinical microbiology"
-    ]
+    principle: "Detects hemolysis patterns caused by bacterial toxins on blood agar.",
+    materials: "Blood agar plate, Inoculating loop, Incubator.",
+    procedure: "Streak sample on blood agar → Incubate → Observe hemolysis zone.",
+    applications: "Differentiates streptococcal species.",
+    interpretation: "α-hemolysis = Greenish, β-hemolysis = Clear zone, γ-hemolysis = None."
   },
   { 
-    name: ["MacConkey agar test"], 
-    steps: [
-      "Selective for Gram-negative enteric bacteria",
-      "Differentiates lactose fermenters (pink colonies) vs non-fermenters (colorless)",
-      "Used for Enterobacteriaceae detection"
-    ]
+    name: ["Simple staining"], 
+    principle: "Uses a single dye to visualize cell size, shape, and arrangement.",
+    materials: "Methylene blue / Safranin / Crystal violet, glass slide, microscope.",
+    procedure: "Fix smear → apply dye → wash → observe under microscope.",
+    applications: "Basic study of morphology.",
+    interpretation: "Cells appear uniformly stained with chosen color."
   },
   { 
-    name: ["Mannitol salt agar test","MSA test"], 
-    steps: [
-      "Selective for Staphylococcus due to high NaCl",
-      "S. aureus ferments mannitol → turns medium yellow",
-      "Differentiates pathogenic vs non-pathogenic staphylococci"
-    ]
+    name: ["Differential staining"], 
+    principle: "Uses more than one dye to distinguish organisms or structures.",
+    materials: "Primary stain, counterstain, decolorizer.",
+    procedure: "Sequential staining with multiple dyes.",
+    applications: "Gram stain, Acid-fast stain.",
+    interpretation: "Different cell types show contrasting colors."
   },
   { 
-    name: ["Catalase test"], 
-    steps: [
-      "Detects catalase enzyme → breaks down H₂O₂ into water + oxygen",
-      "Positive = bubble formation",
-      "Used to differentiate Staphylococcus (+) vs Streptococcus (-)"
-    ]
+    name: ["Streak plate method","Streaking"], 
+    principle: "Separates and isolates bacterial colonies on solid media.",
+    materials: "Inoculating loop, agar plate, Bunsen burner.",
+    procedure: "Streak sample across 4 quadrants with sterilized loop.",
+    applications: "Isolation of pure cultures.",
+    interpretation: "Well-isolated colonies appear in last quadrant."
   },
   { 
-    name: ["Oxidase test"], 
-    steps: [
-      "Detects cytochrome c oxidase enzyme",
-      "Positive = purple/blue color within 30 sec",
-      "Important for identifying Pseudomonas, Neisseria"
-    ]
+    name: ["Pour plate method"], 
+    principle: "Allows growth of colonies inside and on the surface of agar.",
+    materials: "Molten agar, Petri plates, pipettes.",
+    procedure: "Mix diluted sample with molten agar → pour into plate → solidify.",
+    applications: "Counting viable microorganisms.",
+    interpretation: "Colonies within agar (subsurface) and on surface."
   },
   { 
-    name: ["Coagulase test"], 
-    steps: [
-      "Detects coagulase enzyme that clots plasma",
-      "S. aureus = positive (clot forms)",
-      "Differentiates pathogenic vs non-pathogenic staphylococci"
-    ]
-  }
+    name: ["Spread plate method"], 
+    principle: "Even distribution of inoculum across agar surface.",
+    materials: "Sterile spreader, agar plate, diluted sample.",
+    procedure: "Spread sample evenly with glass rod/spreader.",
+    applications: "Quantification of microbes, aerobic culture.",
+    interpretation: "Colonies appear only on surface."
+  },
+  { 
+    name: ["Serial dilution"], 
+    principle: "Reduces microbial concentration stepwise for accurate counting.",
+    materials: "Pipettes, sterile tubes, diluents, agar plates.",
+    procedure: "Transfer culture stepwise into diluents → plate out.",
+    applications: "CFU determination in water/food testing.",
+    interpretation: "Dilution plate with 30–300 colonies is counted."
+  },
+  { 
+    name: ["Microscopy","Light microscopy","Electron microscopy"], 
+    principle: "Visualization of microorganisms using magnification and resolution.",
+    materials: "Microscope (light, electron, fluorescence), slides, stains.",
+    procedure: "Prepare smear → observe under appropriate microscope.",
+    applications: "Morphology, structure, diagnostics.",
+    interpretation: "Shape, size, arrangement, ultrastructure observed."
+  },
+  { 
+    name: ["Cell culture","Tissue culture"], 
+    principle: "Growth of eukaryotic cells under controlled sterile conditions.",
+    materials: "Culture media, CO₂ incubator, sterile flasks.",
+    procedure: "Seed cells into medium → maintain conditions → observe growth.",
+    applications: "Virus isolation, vaccine production, cancer research.",
+    interpretation: "Healthy cell monolayer or cytopathic effect (CPE)."
+  },
+  { 
+    name: ["PCR","Polymerase Chain Reaction"], 
+    principle: "Amplifies DNA using heat-stable polymerase.",
+    materials: "Template DNA, primers, Taq polymerase, nucleotides, thermal cycler.",
+    procedure: "Denaturation → Annealing → Extension (repeated cycles).",
+    applications: "Pathogen detection, genetic studies, forensics.",
+    interpretation: "DNA band visualized after amplification."
+  },
+  { 
+    name: ["Gel electrophoresis"], 
+    principle: "Separates DNA, RNA, or proteins based on size/charge in a gel matrix.",
+    materials: "Agarose gel, electrophoresis tank, DNA ladder, buffer.",
+    procedure: "Load samples → run current → stain → visualize under UV.",
+    applications: "DNA analysis, purity check, PCR confirmation.",
+    interpretation: "Smaller fragments migrate farther; band patterns compared."
+  },
+  { 
+    name: ["Western blotting"], 
+    principle: "Detects specific proteins using antibodies.",
+    materials: "Gel electrophoresis system, nitrocellulose membrane, antibodies.",
+    procedure: "Protein separation → transfer → antibody probing → detection.",
+    applications: "HIV diagnosis, protein research.",
+    interpretation: "Presence/absence of protein bands detected."
+  },
+  { 
+    name: ["ELISA","Enzyme-linked immunosorbent assay"], 
+    principle: "Antibody-antigen reaction detected by enzyme-substrate color change.",
+    materials: "Microtiter plate, antigen/antibody, enzyme conjugate, substrate.",
+    procedure: "Bind antigen/antibody → add conjugate → substrate → measure color.",
+    applications: "HIV, hepatitis, COVID-19 diagnosis.",
+    interpretation: "Positive = color development; Negative = no color."
+  },
+  { 
+    name: ["Flow cytometry"], 
+    principle: "Laser-based technique analyzing size, granularity, and fluorescence of cells.",
+    materials: "Flow cytometer, fluorescent antibodies, buffer.",
+    procedure: "Label cells → pass through laser beam → analyze signals.",
+    applications: "Immunology, hematology, cancer diagnosis.",
+    interpretation: "Scatter plots show distinct cell populations."
+  },
+  { 
+    name: ["Spectrophotometry"], 
+    principle: "Measures microbial growth via light absorbance (OD600).",
+    materials: "Spectrophotometer, cuvettes, culture broth.",
+    procedure: "Blank instrument → measure culture absorbance.",
+    applications: "Growth monitoring, kinetics studies.",
+    interpretation: "Higher OD = higher cell density."
+  },
+  { 
+    name: ["Blood agar culture","Hemolysis test"], 
+    principle: "Detects bacterial hemolytic activity on blood agar.",
+    materials: "Blood agar plates, inoculating loop, incubator.",
+    procedure: "Inoculate plate → incubate → examine hemolysis zones.",
+    applications: "Differentiation of streptococci and other pathogens.",
+    interpretation: "α = green partial; β = clear complete; γ = none."
+  },
+{
+  name: ["Catalase test"],
+  principle: "Detects catalase enzyme that breaks hydrogen peroxide into water and oxygen.",
+  materials: "3% hydrogen peroxide, glass slide, inoculating loop.",
+  procedure: "Place colony on slide → add H₂O₂ → observe for bubbles.",
+  applications: "Differentiate Staphylococcus (positive) vs Streptococcus (negative).",
+  interpretation: "Positive = bubble formation; Negative = no bubbles."
+},
+{
+  name: ["Oxidase test"],
+  principle: "Detects cytochrome c oxidase enzyme in bacteria.",
+  materials: "Oxidase reagent (tetramethyl-p-phenylenediamine), filter paper.",
+  procedure: "Smear colony → add reagent → observe color change.",
+  applications: "Identify Pseudomonas, Neisseria, Vibrio species.",
+  interpretation: "Positive = dark purple/blue color within 30 sec; Negative = no change."
+},
+{
+  name: ["Coagulase test"],
+  principle: "Detects coagulase enzyme that clots plasma.",
+  materials: "Rabbit plasma, bacterial culture.",
+  procedure: "Mix culture with plasma → incubate → observe clotting.",
+  applications: "Differentiate Staphylococcus aureus (positive) from other staphylococci.",
+  interpretation: "Positive = clot formation; Negative = liquid remains."
+},
+{
+  name: ["Indole test"],
+  principle: "Detects ability of bacteria to split tryptophan into indole using tryptophanase enzyme.",
+  materials: "Tryptone broth, Kovac’s reagent.",
+  procedure: "Inoculate broth → incubate 24h → add Kovac’s reagent.",
+  applications: "Differentiate E. coli (indole-positive) from Enterobacter, Klebsiella (negative).",
+  interpretation: "Positive = red ring at top; Negative = yellow/no color change."
+},
+{
+  name: ["Methyl Red test","MR test"],
+  principle: "Detects stable acid production from glucose fermentation.",
+  materials: "MR-VP broth, methyl red indicator.",
+  procedure: "Inoculate broth → incubate 48h → add methyl red.",
+  applications: "Part of IMViC tests for Enterobacteriaceae.",
+  interpretation: "Positive = red color; Negative = yellow/orange."
+},
+{
+  name: ["Voges-Proskauer test","VP test"],
+  principle: "Detects acetoin (neutral end product of glucose fermentation).",
+  materials: "MR-VP broth, Barritt’s reagents A & B.",
+  procedure: "Inoculate → incubate → add reagents → shake.",
+  applications: "Differentiate Enterobacter (positive) from E. coli (negative).",
+  interpretation: "Positive = red/pink color; Negative = no color change."
+},
+{
+  name: ["Citrate utilization test"],
+  principle: "Detects ability of bacteria to use citrate as sole carbon source.",
+  materials: "Simmons citrate agar slant.",
+  procedure: "Streak slant → incubate 24–48h.",
+  applications: "Part of IMViC tests for Enterobacteriaceae.",
+  interpretation: "Positive = blue slant; Negative = green slant."
+},
+{
+  name: ["Urease test"],
+  principle: "Detects urease enzyme which hydrolyzes urea into ammonia & CO₂.",
+  materials: "Christensen’s urea agar slant.",
+  procedure: "Streak slant → incubate few hours to overnight.",
+  applications: "Identify Proteus, Helicobacter pylori.",
+  interpretation: "Positive = pink (alkaline); Negative = no color change (yellow/orange)."
+},
+{
+  name: ["Triple Sugar Iron test","TSI test"],
+  principle: "Differentiates bacteria based on carbohydrate fermentation and H₂S production.",
+  materials: "TSI agar slant.",
+  procedure: "Stab butt + streak slant → incubate 18–24h.",
+  applications: "Identify Enterobacteriaceae.",
+  interpretation: "Slant/butt colors + gas/H₂S recorded (e.g., A/A gas, K/A H₂S)."
+}
 ];
-// Function to search microbes
+// function to search microbes
 function searchMicrobes() {
-  let query = document.getElementById("microbeSearch").value.toLowerCase().trim();
-  let resultsDiv = document.getElementById("microbeResults");
+  const query = document.getElementById("microbeSearch").value.toLowerCase();
+  const resultsDiv = document.getElementById("microbeResults");
   resultsDiv.innerHTML = "";
 
-  let results = microbes.filter(m => {
-    let mainName = m.name.toLowerCase();
-    let synonyms = m.synonyms ? m.synonyms.map(s => s.toLowerCase()) : [];
-    return mainName.includes(query) || synonyms.some(s => s.includes(query));
-  });
+  // match with name + synonyms
+  const results = microbes.filter(microbe =>
+    [microbe.name, ...(microbe.synonyms || [])]
+      .some(n => n.toLowerCase().includes(query))
+  );
 
-  if (results.length > 0) {
-    results.forEach(m => {
-      let card = document.createElement("div");
-      card.className = "result-card";
-
-      let name = document.createElement("h3");
-      name.textContent = m.name;
-      card.appendChild(name);
-
-      let ul = document.createElement("ul");
-      m.info.forEach(point => {
-        let li = document.createElement("li");
-        li.textContent = point;
-        ul.appendChild(li);
-      });
-      card.appendChild(ul);
-
-      resultsDiv.appendChild(card);
-    });
-  } else {
+  if (results.length === 0) {
     resultsDiv.innerHTML = "<p>No results found</p>";
+    return;
   }
+
+  results.forEach(microbe => {
+    const details = `
+  <div class="subtitle morphology">
+    <strong>Morphological characteristics:</strong>
+    ${microbe.morphological}
+  </div>
+  <div class="subtitle culture">
+    <strong>Culture characteristics:</strong>
+    ${microbe.culture}
+  </div>
+  <div class="subtitle virulence">
+    <strong>Virulence factors:</strong>
+    ${microbe.virulence}
+  </div>
+  <div class="subtitle transmission">
+    <strong>Mode of transmission:</strong>
+    ${microbe.transmission}
+  </div>
+  <div class="subtitle treatment">
+    <strong>Treatment & Prevention:</strong>
+    ${microbe.treatment}
+  </div>
+`;
+ resultsDiv.innerHTML += `
+      <div class="result-card">
+        <h3>${microbe.name}</h3>
+        ${details}
+      </div>
+    `;
+  });
 }
 // Function to search techniques
+// Function to search techniques
 function searchTechniques() {
-    let query = document.getElementById("techSearch").value.toLowerCase();
-    let resultsDiv = document.getElementById("techResults");
-    resultsDiv.innerHTML = "";
+  const query = document.getElementById("techSearch").value.toLowerCase();
+  const resultsDiv = document.getElementById("techResults");
+  resultsDiv.innerHTML = "";
 
-    let results = techniques.filter(t =>
-        t.name.some(n => n.toLowerCase().includes(query))
-    );
+  // match with name + synonyms
+  const results = techniques.filter(t =>
+    (t.name || []).some(n => n.toLowerCase().includes(query))
+  );
 
-    if (results.length > 0) {
-        results.forEach(t => {
-            let card = document.createElement("div");
-            card.className = "result-card";
+  if (results.length === 0) {
+    resultsDiv.innerHTML = "<p>No results found</p>";
+    return;
+  }
 
-            let name = document.createElement("h3");
-            name.textContent = t.name[0];
-            card.appendChild(name);
+  results.forEach(t => {
+    let details = "";
 
-            let ul = document.createElement("ul");
-            t.steps.forEach(point => {   // 🔥 FIXED (was t.info earlier)
-                let li = document.createElement("li");
-                li.textContent = point;
-                ul.appendChild(li);
-            });
-            card.appendChild(ul);
-
-            resultsDiv.appendChild(card);
-        });
-    } else {
-        resultsDiv.innerHTML = "<p>No results found</p>";
+    if (t.principle) {
+      details += `
+        <div class="subtitle morphology">
+          <strong>Principle:</strong>
+          ${t.principle}
+        </div>`;
     }
+    if (t.materials) {
+      details += `
+        <div class="subtitle culture">
+          <strong>Materials required:</strong>
+          ${t.materials}
+        </div>`;
+    }
+    if (t.procedure) {
+      details += `
+        <div class="subtitle virulence">
+          <strong>Procedure:</strong>
+          ${t.procedure}
+        </div>`;
+    }
+    if (t.applications) {
+      details += `
+        <div class="subtitle transmission">
+          <strong>Applications:</strong>
+          ${t.applications}
+        </div>`;
+    }
+    if (t.interpretation) {
+      details += `
+        <div class="subtitle treatment">
+          <strong>Result interpretation:</strong>
+          ${t.interpretation}
+        </div>`;
+    }
+
+    resultsDiv.innerHTML += `
+      <div class="result-card">
+        <h3>${t.name[0]}</h3>
+        ${details}
+      </div>
+    `;
+  });
 }
