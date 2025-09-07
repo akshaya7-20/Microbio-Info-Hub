@@ -154,8 +154,59 @@ body {
 .results ul {
   padding-left: 20px;
 }
+.subtitle {
+  display: block;
+  font-weight: bold;
+  margin: 12px 0 6px 0;  /* spacing around subtitle */
+  padding: 6px 10px;
+  border-radius: 8px;
+  font-size: 15px;
+}
+.field-label {
+  font-weight: bold;
+  color: #ffb6b9;   /* pastel pink */
+}
 
-.results li {
-  margin-bottom: 5px;
-  list-style-type: disc;
+.result-card h3 {
+  color: #cdb4db;   /* pastel purple */
+}
+/* Subtitle blocks */
+.subtitle {
+  margin: 12px 0;
+  padding: 10px 12px;
+  border-radius: 8px;
+  font-size: 14px;
+  line-height: 1.5;
+  color: #1d2b4f; /* dark readable text */
+}
+.subtitle strong {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.subtitle.morphology { 
+  background-color: #f8d7da;   /* pastel pink */
+  color: #7a1f1f;              /* dark red font */
+}   
+
+.subtitle.culture { 
+  background-color: #d1ecf1;   /* pastel blue */
+  color: #0a4c5a;              /* dark teal font */
+}      
+
+.subtitle.virulence { 
+  background-color: #fff3cd;   /* pastel yellow */
+  color: #665200;              /* dark brown font */
+}    
+
+.subtitle.transmission { 
+  background-color: #d4edda;   /* pastel green */
+  color: #1f4d1f;              /* dark green font */
+}    
+
+.subtitle.treatment { 
+  background-color: #e2d5f9;   /* pastel lavender */
+  color: #3d1f7a;              /* dark purple font */
 }
